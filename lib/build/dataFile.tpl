@@ -10,7 +10,7 @@
     if (typeof window == 'undefined') {
         module.exports = tzData;
     } else if (typeof define != 'undefined') {
-        define("walltime-data", [], function () {
+        define(function () {
             return tzData;
         });
     } else {

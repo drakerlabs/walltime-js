@@ -67,7 +67,12 @@ module.exports = function (grunt) {
 
             lib: {
                 options: {
-                    out: "client/walltime.js"
+                    out: "client/walltime.js",
+
+                    // Remove the named define for walltime
+                    onBuildWrite: function(name, path, contents) {
+                        return contents.replace(/define\('walltime',/, 'define(');
+                    }
                 }
             },
             
